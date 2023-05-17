@@ -44,7 +44,7 @@ bool Sodaq_R4X_MQTT::openMQTT(const char * server, uint16_t port)
     }
 
     if (_r4xInstance) {
-        _socketID = _r4xInstance->socketCreate(0, UbloxProtocols::TCP);
+        _socketID = _r4xInstance->socketCreate(0, UbloxProtocols::UbloxTCP);
         if (_socketID >= 0) {
             //_r4xInstance->socketSetR4Option(_socketID, 65535, 8, 1);
             return _r4xInstance->socketConnect(_socketID, server, port);
